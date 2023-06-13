@@ -1,0 +1,33 @@
+<div class="row min-vh-100">
+  <div class="col-6 d-flex justify-content-center align-items-center"></div>
+  <div class="col-6 d-flex justify-content-center align-items-center">
+    <div class="row gy-4 d-flex flex-column col-6">
+      <i
+        class="col fa-regular fa-circle-user fa-10x text-primary text-center"
+      ></i>
+      <p class="col text-center">Iniciar sesión</p>
+      <form class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Escribe tu correo electrónico</label
+          >
+          <input type="email" class="form-control" required />
+          <div class="invalid-feedback">
+            <span> El correo electrónico es requerido. </span>
+            <span> Este no es un correo electrónico valido. </span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contraseña</label>
+          <input class="form-control" />
+          <div class="invalid-feedback">La contraseña es requerida.</div>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary gradient mx-5">
+            Ingresar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

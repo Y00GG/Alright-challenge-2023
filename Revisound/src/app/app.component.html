@@ -1,0 +1,16 @@
+<div *ngIf="ruta !== '/home'">
+  <div class="d-flex gx-0">
+    <div>
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="flex-grow-1">
+      <div class="container py-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="ruta === '/home'">
+  <router-outlet></router-outlet>
+</div>

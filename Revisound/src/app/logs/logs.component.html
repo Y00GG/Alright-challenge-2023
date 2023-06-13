@@ -1,0 +1,31 @@
+<div class="">
+  <p class="h1 text-primary fw-bold pb-5 text-end px-5">
+    HISTORIAL DE ARCHIVOS
+  </p>
+
+  <div>
+    <table
+      class="table"
+      datatable
+      [dtOptions]="dtOptions"
+      [dtTrigger]="dtTrigger"
+    >
+      <thead>
+        <tr class="table-dark fw-bold">
+          <th scope="col">Usuario</th>
+          <th scope="col">Rol</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let log of logs">
+          <th scope="row">{{ log.usuario }}</th>
+          <td>{{ log.rol }}</td>
+          <td>{{ log.fecha }}</td>
+          <td>{{ log.descripcion }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

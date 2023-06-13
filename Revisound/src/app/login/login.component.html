@@ -1,0 +1,88 @@
+<div class="row min-vh-100">
+  <div class="col-6 gradient d-flex justify-content-center align-items-center">
+    <img
+      src="../../assets/20755.jpg"
+      class="object-fit-cover rounded-circle"
+      width="500px"
+      height="500px"
+      alt="login"
+    />
+  </div>
+  <div class="col-6 d-flex justify-content-center align-items-center">
+    <div class="row gy-4 d-flex flex-column col-6">
+      <i
+        class="col fa-regular fa-circle-user fa-10x text-primary text-center"
+      ></i>
+      <p class="col text-center">Iniciar sesión</p>
+      <form
+        [formGroup]="formulario"
+        (ngSubmit)="login()"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label"
+            >Escribe tu correo electrónico</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            [ngClass]="{
+              'is-invalid':
+                formulario.get('correo')?.invalid &&
+                formulario.get('correo')?.touched
+            }"
+            id="correo"
+            aria-describedby="emailHelp"
+            formControlName="correo"
+            required
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="
+              formulario.get('correo')?.invalid &&
+              formulario.get('correo')?.touched
+            "
+          >
+            <span *ngIf="formulario.get('correol')?.errors?.['required']">
+              El correo electrónico es requerido.
+            </span>
+            <span *ngIf="formulario.get('correo')?.errors?.['correo']">
+              Este no es un correo electrónico valido.
+            </span>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label"
+            >Escribe tu contraseña</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="clave"
+            formControlName="clave"
+            [ngClass]="{
+              'is-invalid':
+                formulario.get('clave')?.invalid &&
+                formulario.get('clave')?.touched
+            }"
+          />
+          <div
+            class="invalid-feedback"
+            *ngIf="
+              formulario.get('clave')?.invalid &&
+              formulario.get('clave')?.touched
+            "
+          >
+            La contraseña es requerida.
+          </div>
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary gradient mx-5">
+            Ingresar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

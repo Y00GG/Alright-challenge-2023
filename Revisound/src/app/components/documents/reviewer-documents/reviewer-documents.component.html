@@ -1,0 +1,97 @@
+<div class="d-flex row gy-4" *ngFor="let document of documents">
+  <div class="col-3">
+    <i class="fa-regular fa-file-pdf fa-8x"></i>
+  </div>
+  <div class="col-6">
+    <p class="h4 fw-bold">Contrato 1</p>
+    <div class="row">
+      <p class="p-4 col-6 text-black">Alvaro Campos</p>
+      <p class="p-4 col-6 text-black">Fecha: <span>10/06/2023</span></p>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="row gy-4">
+      <div class="d-grid">
+        <button
+          class="btn btn-primary gradient btn-lg"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          (click)="open(document)"
+        >
+          Revisar
+        </button>
+      </div>
+    </div>
+  </div>
+  <hr class="border-black border-2 opacity-1" />
+</div>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{ documentCurrent.name }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-4">
+            <div
+              style="height: 500px"
+              class="overflow-y-auto overflow-x-hidden"
+            >
+              <div>
+                <p>Comentario</p>
+                <div class="row">
+                  <p class="col-6">Pagina 1</p>
+                  <p class="col-6">Párrafo 3,4</p>
+                  <p>
+                    Ullamco tempor commodo eiusmod exercitation nulla elit
+                    velit.
+                  </p>
+                  <div class="d-flex justify-content-around">
+                    <button class="btn">
+                      <i class="fa-solid fa-thumbs-up fa-lg text-success"></i>
+                    </button>
+                    <button class="btn">
+                      <i class="fa-solid fa-thumbs-down fa-lg text-danger"></i>
+                    </button>
+                  </div>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
+          <div class="col-8 row ps-4">
+            <div class="ratio ratio-4x3">
+              <iframe
+                src="https://www.turnerlibros.com/wp-content/uploads/2021/02/ejemplo.pdf"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Rechazar
+        </button>
+        <button type="button" class="btn btn-success">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

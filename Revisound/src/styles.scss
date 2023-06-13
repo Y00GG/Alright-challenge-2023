@@ -1,0 +1,22 @@
+
+$dark: black;
+
+@import "bootswatch/dist/lumen/variables";
+@import "bootstrap/scss/bootstrap";
+@import "bootswatch/dist/lumen/bootswatch";
+
+body {
+  background: #cfd7db !important;
+}
+
+:root {
+  --primary-gradient: #{linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 35%,
+      rgba($primary, 1) 70%
+    )};
+}
+
+.gradient {
+  background: var(--primary-gradient);
+}
